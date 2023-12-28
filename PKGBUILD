@@ -20,23 +20,23 @@ license=('GPL2')
 makedepends=( # Since we don't build the doc, most of the makedeps for other linux packages are not needed here
   'kmod' 'bc' 'dtc' 'uboot-tools' 'python'
 )
+_toolchain_url='https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu'
+_toolchain_name='gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu'
 options=(!strip !distcc)
 source=(
-  "https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz"
-  "https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz.asc"
+  "${_toolchain_url}/${_toolchain_name}.tar.xz"
   "${_srcname}.tar.gz::${url}/archive/${_armbian_commit}.tar.gz"
   'config'
   'linux.preset'
 )
 sha256sums=(
+  '3b6465fb91564b54bbdf9578b4cc3aa198dd363f7a43820eab06ea2932c8e0bf'
   '6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307'
   '0bcf52afd34bb4550109bd619d8fdca62b6a13cf3e0326801e43f9cbcf4f8c94'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
 
 prepare() {
-  export ARCH="arm64"
-  export CROSS_COMPILE="aarch64-linux-gnu-"
   cd "${_srcname}"
 
   echo "Setting version..."
@@ -45,12 +45,13 @@ prepare() {
   echo "${pkgbase#linux}" > localversion.20-pkgname
 
   # Prepare the configuration file
-  make rockchip_linux_defconfig rk3588_edge.config
+  cat "${srcdir}/config" > '.config'
 }
 
 build() {
   export ARCH="arm64"
-  export CROSS_COMPILE="aarch64-linux-gnu-"
+  export CROSS_COMPILE=$(readlink -f ${_toolchain_name}/bin)/aarch64-linux-gnu-
+  echo ${CROSS_COMPILE}
   cd "${_srcname}"
 
   # get kernel version, which will be used later for modules
@@ -186,7 +187,7 @@ _package-headers() {
   done < <(find "${_builddir}" -type f -perm -u+x ! -name vmlinux -print0)
 
   echo "Stripping vmlinux..."
-  strip -v $STRIP_STATIC "${_builddir}/vmlinux"
+  ${CROSS_COMPILE}strip -v $STRIP_STATIC "${_builddir}/vmlinux"
 
   echo "Adding symlink..."
   mkdir -p "${pkgdir}/usr/src"
