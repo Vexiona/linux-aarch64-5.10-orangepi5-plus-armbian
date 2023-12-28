@@ -45,7 +45,7 @@ prepare() {
   echo "${pkgbase#linux}" > localversion.20-pkgname
 
   # Prepare the configuration file
-  cat "${srcdir}/config" > '.config'
+  make rockchip_linux_defconfig rk3588_edge.config
 }
 
 build() {
