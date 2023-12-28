@@ -1,6 +1,6 @@
 pkgbase = linux-aarch64-armbian-rockchip
-	pkgver = 5.10.110
-	pkgrel = 6
+	pkgver = 5.10.160
+	pkgrel = 1
 	url = https://github.com/armbian/linux-rockchip
 	arch = aarch64
 	license = GPL2
