@@ -1,7 +1,7 @@
 # Maintainer: Vexiona <88843406+Vexiona@users.noreply.github.com>
 
 _desc="AArch64 armbian kernel for rockchip devices"
-_pkgver_main=5.10.110
+_pkgver_main=5.10.160
 _pkgver_suffix=armbian-rockchip
 _pkgver_uname="${_pkgver_main}-${_pkgver_suffix}"
 _armbian_repo='linux-rockchip'
@@ -13,7 +13,7 @@ pkgname=(
   "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
-pkgrel=6
+pkgrel=1
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
