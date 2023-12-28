@@ -34,6 +34,8 @@ sha256sums=(
 )
 
 prepare() {
+  export ARCH="arm64"
+  export CROSS_COMPILE="aarch64-linux-gnu-"
   cd "${_srcname}"
 
   #echo "Patching kernel so it could be built with GCC 12..."
@@ -49,8 +51,6 @@ prepare() {
 }
 
 build() {
-  export ARCH="arm64"
-  export CROSS_COMPILE="aarch64-linux-gnu-"
   cd "${_srcname}"
 
   # get kernel version, which will be used later for modules
