@@ -15,7 +15,7 @@ pkgname=(
 pkgver="${_pkgver_main}"
 pkgrel=6
 arch=('aarch64')
-url="https://github.com/armbian/${_orangepi_repo}"
+url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
 makedepends=( # Since we don't build the doc, most of the makedeps for other linux packages are not needed here
   'kmod' 'bc' 'dtc' 'uboot-tools'
@@ -23,7 +23,7 @@ makedepends=( # Since we don't build the doc, most of the makedeps for other lin
 options=(!strip !distcc)
 #_sha256_gcc12_fixups_patch='e9c720fa4dba291f3a87a04eb9245fcf99cd0c4164d2c5deefe7ca35eedf1960'
 source=(
-  "${_srcname}.tar.gz::${url}/archive/${_orangepi_commit}.tar.gz"
+  "${_srcname}.tar.gz::${url}/archive/${_armbian_commit}.tar.gz"
   #"gcc12-fixups.patch::https://github.com/7Ji-PKGBUILDs/${pkgbase}/releases/download/assets/sha256-${_sha256_gcc12_fixups_patch}-gcc12-fixups.patch"
   'config'
   'linux.preset'
