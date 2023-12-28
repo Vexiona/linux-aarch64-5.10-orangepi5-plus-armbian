@@ -24,13 +24,11 @@ options=(!strip !distcc)
 #_sha256_gcc12_fixups_patch='e9c720fa4dba291f3a87a04eb9245fcf99cd0c4164d2c5deefe7ca35eedf1960'
 source=(
   "${_srcname}.tar.gz::${url}/archive/${_armbian_commit}.tar.gz"
-  #"gcc12-fixups.patch::https://github.com/7Ji-PKGBUILDs/${pkgbase}/releases/download/assets/sha256-${_sha256_gcc12_fixups_patch}-gcc12-fixups.patch"
   'config'
   'linux.preset'
 )
 sha256sums=(
-  '93ebccfed4d5d1f5a1612c06520a83346fcf4522dcf50c67bae11359f3f32d85'
-  #"${_sha256_gcc12_fixups_patch}"
+  '6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307'
   '325e4afdc16e1eb34e18e651b0c7b8cb43a60ade086d8388aa5667d913157e55'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
