@@ -18,18 +18,19 @@ arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
 makedepends=( # Since we don't build the doc, most of the makedeps for other linux packages are not needed here
-  'kmod' 'bc' 'dtc' 'uboot-tools' 'python3'
+  'kmod' 'bc' 'dtc' 'uboot-tools' 'python'
 )
 options=(!strip !distcc)
-#_sha256_gcc12_fixups_patch='e9c720fa4dba291f3a87a04eb9245fcf99cd0c4164d2c5deefe7ca35eedf1960'
 source=(
+  "https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz"
+  "https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz.asc"
   "${_srcname}.tar.gz::${url}/archive/${_armbian_commit}.tar.gz"
   'config'
   'linux.preset'
 )
 sha256sums=(
   '6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307'
-  '325e4afdc16e1eb34e18e651b0c7b8cb43a60ade086d8388aa5667d913157e55'
+  '0bcf52afd34bb4550109bd619d8fdca62b6a13cf3e0326801e43f9cbcf4f8c94'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
 
@@ -37,9 +38,6 @@ prepare() {
   export ARCH="arm64"
   export CROSS_COMPILE="aarch64-linux-gnu-"
   cd "${_srcname}"
-
-  #echo "Patching kernel so it could be built with GCC 12..."
-  #patch -p1 < ../gcc12-fixups.patch
 
   echo "Setting version..."
   scripts/setlocalversion --save-scmversion
