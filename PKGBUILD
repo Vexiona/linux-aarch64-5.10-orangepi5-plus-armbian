@@ -1,8 +1,8 @@
 # Maintainer: Vexiona <88843406+Vexiona@users.noreply.github.com>
 
-_desc="AArch64 armbian kernel for rockchip devices"
+_desc="AArch64 armbian kernel for Orange Pi 5 Plus devices"
 _pkgver_main=5.10.160
-_pkgver_suffix=armbian-rockchip
+_pkgver_suffix=armbian-orangepi5-plus
 _pkgver_uname="${_pkgver_main}-${_pkgver_suffix}"
 _armbian_repo='linux-rockchip'
 _armbian_commit='c2e9a95ab59937a5f0aad0ac6e12fe81f26ea2e0'
@@ -13,7 +13,7 @@ pkgname=(
   "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
-pkgrel=1
+pkgrel=2
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
