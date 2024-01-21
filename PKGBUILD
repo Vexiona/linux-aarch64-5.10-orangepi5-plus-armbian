@@ -9,11 +9,11 @@ _armbian_commit='c2e9a95ab59937a5f0aad0ac6e12fe81f26ea2e0'
 _srcname="${_armbian_repo}-${_armbian_commit}"
 pkgbase=linux-aarch64-${_pkgver_suffix}
 pkgname=(
-  "${pkgbase}"
-  "${pkgbase}-headers"
+  "${pkgbase}-testing"
+  "${pkgbase}-headers-testing"
 )
 pkgver="${_pkgver_main}"
-pkgrel=5
+pkgrel=7
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
