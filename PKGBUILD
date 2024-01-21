@@ -2,15 +2,13 @@
 
 _desc="AArch64 armbian kernel for Orange Pi 5 Plus devices"
 _pkgver_main=5.10.160
-_pkgver_suffix=armbian-orangepi5-plus
-_pkgver_uname="${_pkgver_main}-${_pkgver_suffix}"
 _armbian_repo='linux-rockchip'
 _armbian_commit='c2e9a95ab59937a5f0aad0ac6e12fe81f26ea2e0'
 _srcname="${_armbian_repo}-${_armbian_commit}"
-pkgbase=linux-aarch64-${_pkgver_suffix}
+pkgbase=linux-aarch64-armbian-orangepi5-plus-testing
 pkgname=(
-  "${pkgbase}-testing"
-  "${pkgbase}-headers-testing"
+  "${pkgbase}"
+  "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
 pkgrel=7
@@ -32,7 +30,7 @@ source=(
 sha256sums=(
   '3b6465fb91564b54bbdf9578b4cc3aa198dd363f7a43820eab06ea2932c8e0bf'
   '6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307'
-  '0bcf52afd34bb4550109bd619d8fdca62b6a13cf3e0326801e43f9cbcf4f8c94'
+  '0d91211f5855d06894089c2e33314e46a637bdc1102a28627dcd317be42ff5f6'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
 
