@@ -11,7 +11,7 @@ pkgname=(
   "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
-pkgrel=7
+pkgrel=8
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
@@ -30,7 +30,7 @@ source=(
 sha256sums=(
   '3b6465fb91564b54bbdf9578b4cc3aa198dd363f7a43820eab06ea2932c8e0bf'
   '6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307'
-  '0d91211f5855d06894089c2e33314e46a637bdc1102a28627dcd317be42ff5f6'
+  '68174f5f2bd5c3b6dd47b1743440da553f67e833ae9116dccccdfdb211a9bbe9'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
 
