@@ -17,7 +17,7 @@ pkgbase = linux-aarch64-armbian-orangepi5-plus
 	source = linux.preset
 	sha256sums = 3b6465fb91564b54bbdf9578b4cc3aa198dd363f7a43820eab06ea2932c8e0bf
 	sha256sums = 6e627d80b80849347b57e9e6f6d681dfb988ba2ed509731a534d2f2dda554307
-	sha256sums = 40773e047d87ef29a14d6f4ac7aca9a829a1dbcd86f44b2434bbd1424fb55d03
+	sha256sums = cf867ba21f8d3a425c5736330015226d96fe6d15b52186211d23588413c4ba0f
 	sha256sums = bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3
 
 pkgname = linux-aarch64-armbian-orangepi5-plus
