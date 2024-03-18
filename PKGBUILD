@@ -11,7 +11,7 @@ pkgname=(
   "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
-pkgrel=19
+pkgrel=20
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
