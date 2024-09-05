@@ -5,13 +5,13 @@ _pkgver_main=5.10.160
 _armbian_repo='linux-rockchip'
 _armbian_commit='c2e9a95ab59937a5f0aad0ac6e12fe81f26ea2e0'
 _srcname="${_armbian_repo}-${_armbian_commit}"
-pkgbase=linux-aarch64-armbian-orangepi5-plus
+pkgbase=linux-aarch64-5.10-armbian-orangepi5-plus
 pkgname=(
   "${pkgbase}"
   "${pkgbase}-headers"
 )
 pkgver="${_pkgver_main}"
-pkgrel=21
+pkgrel=22
 arch=('aarch64')
 url="https://github.com/armbian/${_armbian_repo}"
 license=('GPL2')
